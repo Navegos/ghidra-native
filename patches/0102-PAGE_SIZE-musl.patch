@@ -1,0 +1,28 @@
+diff --git a/src/decompiler/sleigh.cc b/src/decompiler/sleigh.cc
+--- a/src/decompiler/sleigh.cc
++++ b/src/decompiler/sleigh.cc
+@@ -16,6 +16,10 @@
+ #include "sleigh.hh"
+ #include "loadimage.hh"
+ 
++#ifdef PAGE_SIZE
++#undef PAGE_SIZE
++#endif
++
+ namespace ghidra {
+ 
+ PcodeCacher::PcodeCacher(void)
+diff --git a/src/decompiler/sleigh.hh b/src/decompiler/sleigh.hh
+--- a/src/decompiler/sleigh.hh
++++ b/src/decompiler/sleigh.hh
+@@ -25,6 +25,10 @@
+ #endif
+ 
++#ifdef PAGE_SIZE
++#undef PAGE_SIZE
++#endif
++
+ namespace ghidra {
+ 
+ class LoadImage;
+ 
